@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    'use strict'
+    class Animal{
+        constructor(food, location){
+            this.food = food;
+            this.location = location;
+        }
+            makeNoise(){
+                console.log(`Лает  ${this.location}`);
+            }
+            eat(){
+                console.log(`Ест ${this.food} в ${this.location}`);
+            }
+            sleep(){
+                console.log(`Спит  ${this.location}`);
+            }
+            
+        }
+
+        class Dog extends Animal{
+            constructor(name, food, location){
+                super(food, location);
+                    this.name = name;
+            }
+            makeNoise(){
+                document.writeln(`${this.name} лает в ${this.location}`);
+            }
+        }
+        
+        class Cat extends Animal{
+            constructor(name, food, location){
+                super(food, location);
+                this.name = name;
+            }
+
+            eat(){
+                document.writeln(`${this.name} ест в ${this.Food()} тут ${this.location}`)
+            }
+            Food(){
+                return "Вискас"
+            }
+        }
+        
+        class Horse extends Animal{
+            constructor(name, food, location){
+                super(food, location);
+                this.name = name;
+        }
+        sleep(){
+            document.writeln(`${this.name} спит тут ${this.location}`)
+        }
+        getUpAmount(){
+            return 5
+        }
+    }
+
+    function treatAnimal(Animal){
+        document.writeln("Ветеринар:");
+        document.writeln(`Имя: ${Animal.name}`);
+        document.writeln(`Ест" ${Animal.food}`);
+        document.writeln(`Находится: ${Animal.location}`);
+    }
+    const dog1 = new Dog("Тузик", "Корм", "Дома"); 
+    const cat1 = new Cat("Шалупонь", "Тузя", "На кухне");
+    const horse1 = new Horse("Милка", "Сено", "Двор");
+
+
+    treatAnimal(dog1);
+    treatAnimal(cat1);
+    treatAnimal(horse1);
+</script>
+
+</body>
+</html>
